@@ -25,3 +25,10 @@
   (exec-path-from-shell-initialize))
 
 (nyan-mode 1)
+
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+(setq neo-smart-open t)
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+
+(require 'all-the-icons)

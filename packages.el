@@ -17,6 +17,8 @@
     format-all
     exec-path-from-shell
     nyan-mode
+    neotree
+    all-the-icons
     ) "a list of packages to ensure are installed at launch.")
 
 (defun packages-installed-p ()
