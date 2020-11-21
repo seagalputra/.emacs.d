@@ -26,9 +26,15 @@
 
 (nyan-mode 1)
 
-(require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
-(setq neo-smart-open t)
-(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-
 (require 'all-the-icons)
+
+(require 'projectile)
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+(require 'treemacs)
+(define-key global-map (kbd "C-x t t") 'treemacs)
+
+(require 'treemacs-magit)
+(require 'treemacs-projectile)

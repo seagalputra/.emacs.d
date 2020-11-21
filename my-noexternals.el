@@ -41,6 +41,9 @@
   (untabify (region-beginning) (region-end))
   (keyboard-quit))
 
+;; Setting full path in title bar
+(setq-default frame-title-format "%b (%f)")
+
 ;; Keybindings
 ;; Below line is for defining custom key-bindings
 
@@ -62,7 +65,7 @@
   "comment or uncomment current line"
   (interactive)
   (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
-(global-set-key (kbd "C-;") 'toggle-comment-on-line)
+(global-set-key (kbd "C-;") 'togglpe-comment-on-line)
 
 ;; Key binding to use "hippie expand" for text autocompletion
 (global-set-key (kbd "M-/") 'hippie-expand)
