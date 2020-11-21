@@ -94,3 +94,7 @@ Temporary Items
 .apdisk
 
 # End of https://www.toptal.com/developers/gitignore/api/emacs,macos,elisp
+
+.cache/
+.lsp-session-v1
+*.eld

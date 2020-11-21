@@ -9,7 +9,7 @@
 
 (add-hook 'after-save-hook 'format-all-buffer)
 
-;; No need for ~ files when edition
+;; No need for ~ files when editing
 (setq create-lockfiles nil)
 
 ;; Show line number
@@ -29,8 +29,8 @@
 
 ;; Emacs can automatically create backup files. This tells Emacs to
 ;; put all backups in ~/.emacs.d/backups.
-(setq backup-directory-alist '(("." . ,(concat user-emacs-directory
-					       "backups"))))
+(setq backup-directory-alist `(("." . ,(concat user-emacs-directory
+                                               "backups"))))
 (setq auto-save-default nil)
 
 ;; Use 2 spaces for tabs
