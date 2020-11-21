@@ -30,8 +30,12 @@
 
 (require 'projectile)
 (projectile-mode +1)
+(setq projectile-project-search-path '("~/Documents/source_code"))
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+(require 'helm-projectile)
+(helm-projectile-on)
 
 (require 'lsp-mode)
 (with-eval-after-load 'lsp-mode
@@ -42,4 +46,31 @@
 (move-text-default-bindings)
 
 (require 'neotree)
-(global-set-key (kbd "C-c o p") 'neotree-toggle)
+(defun neotree-project-dir ()
+  "Open NeoTree using the git root."
+  (interactive)
+  (let ((project-dir (projectile-project-root))
+	(file-name (buffer-file-name)))
+    (neotree-toggle)
+    (if project-dir
+	(if (neo-global--window-exists-p)
+	    (progn
+	      (neotree-dir project-dir)
+	      (neotree-find file-name)))
+      (message "Could not find git project root."))))
+
+;; (global-set-key (kbd "C-c o p") 'neotree-toggle)
+(global-set-key (kbd "C-c o p") 'neotree-project-dir)
+(setq neo-theme 'nerd)
+
+(require 'dashboard)
+(dashboard-setup-startup-hook)
+(setq dashboard-banner-logo-title "I HATE VIM!!!")
+(setq dashboard-set-navigator t)
+(setq dashboard-set-heading-icons t)
+(setq dashboard-set-file-icons t)
+(setq dashboard-set-navigator t)
+(setq dashboard-startup-banner 'logo)
+(setq dashboard-items '((recents  . 5)
+                        (projects . 5)
+                        (agenda . 5)))

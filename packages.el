@@ -24,13 +24,16 @@
     lsp-ui
     flycheck
     company
-    lsp-treemacs
     helm-lsp
     dap-mode
     typescript-mode
     move-text
     neotree
     monokai-theme
+    page-break-lines
+    all-the-icons
+    dashboard
+    helm-projectile
     ) "a list of packages to ensure are installed at launch.")
 
 (defun packages-installed-p ()
