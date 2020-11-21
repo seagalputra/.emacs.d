@@ -18,11 +18,19 @@
     exec-path-from-shell
     nyan-mode
     all-the-icons
-    treemacs
-    treemacs-magit
-    treemacs-projectile
     projectile
     org
+    lsp-mode
+    lsp-ui
+    flycheck
+    company
+    lsp-treemacs
+    helm-lsp
+    dap-mode
+    typescript-mode
+    move-text
+    neotree
+    monokai-theme
     ) "a list of packages to ensure are installed at launch.")
 
 (defun packages-installed-p ()

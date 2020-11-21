@@ -75,3 +75,6 @@
 	try-expand-dabbrev-from-kill
 	try-complete-lisp-symbol-partially
 	try-complete-lisp-symbol))
+
+(setq js-indent-level 2)
+(setq typescript-indent-level 2)

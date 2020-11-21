@@ -1,4 +1,4 @@
-;; loading package
+;; This file is contains some package-related configuration
 (load "~/.emacs.d/packages.el")
 
 (when (fboundp 'winner-mode)
@@ -33,8 +33,13 @@
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
-(require 'treemacs)
-(define-key global-map (kbd "C-x t t") 'treemacs)
+(require 'lsp-mode)
+(with-eval-after-load 'lsp-mode
+  (add-hook 'js-mode-hook #'lsp)
+  (add-hook 'typescript-mode-hook #'lsp)
+  (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration))
 
-(require 'treemacs-magit)
-(require 'treemacs-projectile)
+(move-text-default-bindings)
+
+(require 'neotree)
+(global-set-key (kbd "C-c o p") 'neotree-toggle)
