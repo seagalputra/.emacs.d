@@ -30,12 +30,17 @@
 
 (require 'projectile)
 (projectile-mode +1)
+;; Change the search path of projectile with yours
 (setq projectile-project-search-path '("~/Documents/source_code"))
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 (require 'helm-projectile)
 (helm-projectile-on)
+
+(require 'perspective)
+(persp-mode)
+(persp-turn-on-modestring)
 
 (require 'lsp-mode)
 (with-eval-after-load 'lsp-mode
@@ -76,6 +81,13 @@
                         (agenda . 5)))
 
 (require 'web-mode)
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2))
+(add-hook 'web-mode-hook 'my-web-mode-hook)
+
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
@@ -84,6 +96,7 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
 
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode)
@@ -98,3 +111,9 @@
 
 (setq emmet-move-cursor-between-quotes t)
 (setq emmet-expand-jsx-className? t)
+
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+(require 'smartparens-config)
+(add-hook 'js-mode-hook #'smartparens-mode)
+(add-hook 'typescript-mode-hook #'smartparens-mode)

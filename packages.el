@@ -36,6 +36,9 @@
     helm-projectile
     web-mode
     emmet-mode
+    perspective
+    rainbow-delimiters
+    smartparens
     ) "a list of packages to ensure are installed at launch.")
 
 (defun packages-installed-p ()
