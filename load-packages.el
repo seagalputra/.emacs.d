@@ -74,3 +74,27 @@
 (setq dashboard-items '((recents  . 5)
                         (projects . 5)
                         (agenda . 5)))
+
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+(require 'emmet-mode)
+(add-hook 'sgml-mode-hook 'emmet-mode)
+(add-hook 'css-mode-hook 'emmet-mode)
+(add-hook 'emmet-mode-hook
+	  (lambda ()
+	    (setq emmet-indent-after-insert nil)))
+
+(add-hook 'emmet-mode-hook
+	  (lambda ()
+	    (setq emmet-indentation 2)))
+
+(setq emmet-move-cursor-between-quotes t)
+(setq emmet-expand-jsx-className? t)
