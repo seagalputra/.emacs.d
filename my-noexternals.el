@@ -7,6 +7,15 @@
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
+(set-language-environment "UTF-8")
+(set-default-coding-systems 'utf-8)
+
+(global-visual-line-mode 1)
+
+(setq-default tab-width 4)
+
+(show-paren-mode 1)
+
 (add-hook 'after-save-hook 'format-all-buffer)
 
 ;; No need for ~ files when editing
@@ -19,8 +28,6 @@
 (blink-cursor-mode 0)
 (setq-default cursor-type 'bar)
 
-(show-paren-mode 1)
-
 ;; Saving place when previously visited the same file.
 (require 'saveplace)
 (setq-default save-place t)
@@ -32,14 +39,6 @@
 (setq backup-directory-alist `(("." . ,(concat user-emacs-directory
                                                "backups"))))
 (setq auto-save-default nil)
-
-;; Use 2 spaces for tabs
-(defun die-tabs ()
-  (interactive)
-  (set-variable 'tab-width 2)
-  (mark-whole-buffer)
-  (untabify (region-beginning) (region-end))
-  (keyboard-quit))
 
 ;; Setting full path in title bar
 (setq-default frame-title-format "%b (%f)")
@@ -56,10 +55,6 @@
 ;; restart-emacs
 (global-set-key (kbd "C-c C-r") 'restart-emacs)
 
-;; Helm
-(global-set-key (kbd "C-c f") 'helm-find-files)
-(global-set-key (kbd "M-x") 'helm-M-x)
-
 ;; Configuring comments when editing file
 (defun toggle-comment-on-line ()
   "comment or uncomment current line"
@@ -71,10 +66,12 @@
 (global-set-key (kbd "M-/") 'hippie-expand)
 (setq hippie-expand-try-functions-list
       '(try-expand-dabbrev
-	try-expand-dabbrev-all-buffers
-	try-expand-dabbrev-from-kill
-	try-complete-lisp-symbol-partially
-	try-complete-lisp-symbol))
+		try-expand-dabbrev-all-buffers
+		try-expand-dabbrev-from-kill
+		try-complete-lisp-symbol-partially
+		try-complete-lisp-symbol))
 
 (setq js-indent-level 2)
 (setq typescript-indent-level 2)
+
+(setq ring-bell-function 'ignore)

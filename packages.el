@@ -39,12 +39,16 @@
     perspective
     rainbow-delimiters
     smartparens
+    helm-descbinds
+	helm-swoop
+	avy
+	quickrun
     ) "a list of packages to ensure are installed at launch.")
 
 (defun packages-installed-p ()
   (loop for p in required-packages
-	when (not (package-installed-p p)) do (return nil)
-	finally (return t)))
+		when (not (package-installed-p p)) do (return nil)
+		finally (return t)))
 
 ;; if not all packages not installed, check one by one and install the missing ones.
 (unless (packages-installed-p)
