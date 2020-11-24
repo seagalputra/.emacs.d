@@ -73,9 +73,9 @@
 (with-eval-after-load 'lsp-java
   (add-hook 'java-mode-hook #'lsp))
 
-(require 'lsp-java-boot)
-(add-hook 'lsp-mode-hook #'lsp-lens-mode)
-(add-hook 'java-mode-hook #'lsp-java-boot-lens-mode)
+;; (require 'lsp-java-boot)
+;; (add-hook 'lsp-mode-hook #'lsp-lens-mode)
+;; (add-hook 'java-mode-hook #'lsp-java-boot-lens-mode)
 
 (move-text-default-bindings)
 
