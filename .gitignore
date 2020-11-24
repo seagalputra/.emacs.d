@@ -99,3 +99,7 @@ Temporary Items
 .lsp-session-v1
 *.eld
 recentf
+workspace/
+eclipse.jdt.ls/
+.dap-breakpoints
+request/
