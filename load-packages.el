@@ -10,8 +10,8 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 (yas-load-directory "~/.emacs.d/snippets")
-(add-hook 'term-mode-hook (lambda ()
-							(setq yas-dont-activate t)))
+;; (add-hook 'term-mode-hook (lambda ()
+;; 							(setq yas-dont-activate t)))
 
 (require 'which-key)
 (which-key-mode)
@@ -69,14 +69,6 @@
   (add-hook 'typescript-mode-hook #'lsp)
   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration))
 
-(require 'lsp-java)
-(with-eval-after-load 'lsp-java
-  (add-hook 'java-mode-hook #'lsp))
-
-;; (require 'lsp-java-boot)
-;; (add-hook 'lsp-mode-hook #'lsp-lens-mode)
-;; (add-hook 'java-mode-hook #'lsp-java-boot-lens-mode)
-
 (move-text-default-bindings)
 
 (require 'neotree)
@@ -96,18 +88,7 @@
 ;; (global-set-key (kbd "C-c o p") 'neotree-toggle)
 (global-set-key (kbd "C-c o p") 'neotree-project-dir)
 (setq neo-theme 'nerd)
-
-(require 'dashboard)
-(dashboard-setup-startup-hook)
-(setq dashboard-banner-logo-title "I HATE VIM!!!")
-(setq dashboard-set-navigator t)
-(setq dashboard-set-heading-icons t)
-(setq dashboard-set-file-icons t)
-(setq dashboard-set-navigator t)
-(setq dashboard-startup-banner 'logo)
-(setq dashboard-items '((recents  . 5)
-                        (projects . 5)
-                        (agenda . 5)))
+(setq neo-window-fixed-size nil)
 
 (require 'web-mode)
 (defun my-web-mode-hook ()
@@ -172,7 +153,6 @@
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'after-init-hook 'global-flycheck-mode)
 
-;; (require 'dap-java)
 (global-set-key (kbd "<f5>") 'dap-debug)
 (global-set-key (kbd "M-<f5>") 'dap-hydra)
 (add-hook 'dap-mode 'dap-ui-mode)

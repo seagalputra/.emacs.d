@@ -32,7 +32,6 @@
     monokai-theme
     page-break-lines
     all-the-icons
-    dashboard
     helm-projectile
     web-mode
     emmet-mode
@@ -43,7 +42,7 @@
 	helm-swoop
 	avy
 	quickrun
-	lsp-java
+	yasnippet-snippets
     ) "a list of packages to ensure are installed at launch.")
 
 (defun packages-installed-p ()

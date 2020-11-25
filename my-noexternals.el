@@ -24,8 +24,6 @@
 ;; Show line number
 (global-linum-mode)
 
-;; Stop cursor blinking
-(blink-cursor-mode 0)
 (setq-default cursor-type 'bar)
 
 ;; Saving place when previously visited the same file.
