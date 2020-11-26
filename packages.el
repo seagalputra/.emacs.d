@@ -1,7 +1,8 @@
 (require 'cl)
 (require 'package)
 
-(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives
+			 '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (package-initialize)
 
 ;; This variable contains list of packages that installed to this emacs

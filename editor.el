@@ -16,7 +16,11 @@
 
 (show-paren-mode 1)
 
+(add-to-list 'default-frame-alist '(font . "Monaco-13"))
+
 (add-hook 'after-save-hook 'format-all-buffer)
+
+(setq inhibit-startup-screen t)
 
 ;; No need for ~ files when editing
 (setq create-lockfiles nil)
