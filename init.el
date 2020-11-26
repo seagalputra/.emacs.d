@@ -10,7 +10,7 @@
 
 ;; Run the external file after initial config successfully loaded
 (add-hook 'after-init-hook '(lambda ()
-							  (load "~/.emacs.d/my-noexternals.el")))
+							  (load "~/.emacs.d/editor.el")))
 
 ;; Avoid garbage collection at statup
 (setq gc-cons-threshold most-positive-fixnum

@@ -168,3 +168,6 @@
 
 (require 'helm-lsp)
 (define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol)
+
+(require 'undo-tree)
+(global-undo-tree-mode)

@@ -44,6 +44,7 @@
 	avy
 	quickrun
 	yasnippet-snippets
+	undo-tree
     ) "a list of packages to ensure are installed at launch.")
 
 (defun packages-installed-p ()
