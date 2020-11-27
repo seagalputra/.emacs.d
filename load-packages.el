@@ -42,7 +42,7 @@
 (require 'projectile)
 (projectile-mode +1)
 ;; Change the search path of projectile with yours
-(setq projectile-project-search-path '("~/Documents/source_code" "~/Documents/CIMB-SiAB"))
+(setq projectile-project-search-path '("~/Documents/source_code" "~/Exercism/clojure"))
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 

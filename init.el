@@ -5,8 +5,7 @@
 (load-theme 'monokai t)
 
 ;; set JAVA_HOME
-;; (setenv "JAVA_HOME" "/Users/seagalputra/.sdkman/candidates/java/current")
-;; (setq lsp-java-java-path "/Users/seagalputra/.sdkman/candidates/java/current")
+(setenv "JAVA_HOME" "/Users/seagalputra/.sdkman/candidates/java/current")
 
 ;; Run the external file after initial config successfully loaded
 (add-hook 'after-init-hook '(lambda ()

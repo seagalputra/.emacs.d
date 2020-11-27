@@ -18,7 +18,7 @@
 
 (add-to-list 'default-frame-alist '(font . "Monaco-13"))
 
-(add-hook 'after-save-hook 'format-all-buffer)
+;; (add-hook 'after-save-hook 'format-all-buffer)
 
 (setq inhibit-startup-screen t)
 
