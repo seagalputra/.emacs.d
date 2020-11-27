@@ -29,7 +29,6 @@
     dap-mode
     typescript-mode
     move-text
-    neotree
     monokai-theme
     page-break-lines
     all-the-icons
@@ -45,6 +44,13 @@
 	quickrun
 	yasnippet-snippets
 	undo-tree
+	editorconfig
+	clojure-mode
+	cider
+	clojure-snippets
+	clj-refactor
+	paredit
+	clojure-mode-extra-font-locking
     ) "a list of packages to ensure are installed at launch.")
 
 (defun packages-installed-p ()
