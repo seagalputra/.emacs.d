@@ -5,6 +5,9 @@
 (when (fboundp 'scroll-bar-mode)
   (scroll-bar-mode -1))
 
+(when (not (display-graphic-p))
+  (menu-bar-mode -1))
+
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 (set-language-environment "UTF-8")
@@ -24,7 +27,9 @@
 (setq create-lockfiles nil)
 
 ;; Show line number
-(global-linum-mode)
+(if (display-graphic-p)
+    (global-linum-mode)
+  (global-linum-mode -1))
 
 (setq-default cursor-type 'bar)
 
@@ -57,7 +62,7 @@
 
 ;; Configuring comments when editing file
 (defun toggle-comment-on-line ()
-  "comment or uncomment current line"
+  "Comment or uncomment current line."
   (interactive)
   (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
 (global-set-key (kbd "C-;") 'togglpe-comment-on-line)
@@ -66,10 +71,10 @@
 (global-set-key (kbd "M-/") 'hippie-expand)
 (setq hippie-expand-try-functions-list
       '(try-expand-dabbrev
-		try-expand-dabbrev-all-buffers
-		try-expand-dabbrev-from-kill
-		try-complete-lisp-symbol-partially
-		try-complete-lisp-symbol))
+	try-expand-dabbrev-all-buffers
+	try-expand-dabbrev-from-kill
+	try-complete-lisp-symbol-partially
+	try-complete-lisp-symbol))
 
 (setq js-indent-level 2)
 (setq typescript-indent-level 2)

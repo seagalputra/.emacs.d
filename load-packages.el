@@ -13,7 +13,7 @@
 (yas-global-mode 1)
 (yas-load-directory "~/.emacs.d/snippets")
 (add-hook 'term-mode-hook (lambda ()
-							(setq yas-dont-activate t)))
+			    (setq yas-dont-activate t)))
 
 (require 'which-key)
 (which-key-mode)
@@ -34,8 +34,6 @@
 (require 'exec-path-from-shell)
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
-
-(nyan-mode 1)
 
 (require 'all-the-icons)
 
@@ -95,12 +93,12 @@
 (add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'css-mode-hook 'emmet-mode)
 (add-hook 'emmet-mode-hook
-		  (lambda ()
-			(setq emmet-indent-after-insert nil)))
+	  (lambda ()
+	    (setq emmet-indent-after-insert nil)))
 
 (add-hook 'emmet-mode-hook
-		  (lambda ()
-			(setq emmet-indentation 2)))
+	  (lambda ()
+	    (setq emmet-indentation 2)))
 
 (setq emmet-move-cursor-between-quotes t)
 (setq emmet-expand-jsx-className? t)
@@ -210,9 +208,9 @@
   (interactive)
   (cider-load-current-buffer)
   (let ((ns (cider-current-ns)))
-	(cider-repl-set-ns ns)
-	(cider-interactive-eval (format "(println '(def server (%s/start))) (println 'server)" ns))
-	(cider-intaractive-eval (format "(def server (%s/start)) (println server)" ns))))
+    (cider-repl-set-ns ns)
+    (cider-interactive-eval (format "(println '(def server (%s/start))) (println 'server)" ns))
+    (cider-intaractive-eval (format "(def server (%s/start)) (println server)" ns))))
 
 (defun cider-refresh ()
   (interactive)
@@ -224,8 +222,7 @@
 
 (eval-after-load 'cider
   '(progn
-	 (define-key clojure-mode-map (kbd "C-c C-v") 'cider-start-http-server)
-	 (define-key clojure-mode-map (kbd "C-M-r") 'cider-refresh)
-	 (define-key clojure-mode-map (kbd "C-c u") 'cider-user-ns)
-	 (define-key cider-mode-map (kbd "C-c u") 'cider-user-ns)))
-
+     (define-key clojure-mode-map (kbd "C-c C-v") 'cider-start-http-server)
+     (define-key clojure-mode-map (kbd "C-M-r") 'cider-refresh)
+     (define-key clojure-mode-map (kbd "C-c u") 'cider-user-ns)
+     (define-key cider-mode-map (kbd "C-c u") 'cider-user-ns)))
