@@ -43,7 +43,6 @@
 	avy
 	quickrun
 	yasnippet-snippets
-	undo-tree
 	editorconfig
 	clojure-mode
 	cider

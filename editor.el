@@ -12,8 +12,6 @@
 
 (global-visual-line-mode 1)
 
-(setq-default tab-width 4)
-
 (show-paren-mode 1)
 
 (add-to-list 'default-frame-alist '(font . "Monaco-13"))
