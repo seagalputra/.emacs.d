@@ -4,21 +4,18 @@
 ;; load theme
 (load-theme 'monokai t)
 
-;; set JAVA_HOME
-(setenv "JAVA_HOME" "/Users/seagalputra/.sdkman/candidates/java/current")
-
 ;; Run the external file after initial config successfully loaded
 (add-hook 'after-init-hook '(lambda ()
-							  (load "~/.emacs.d/editor.el")))
+			      (load "~/.emacs.d/editor.el")))
 
 ;; Avoid garbage collection at statup
 (setq gc-cons-threshold most-positive-fixnum
       gc-cons-percentage 0.6)
 
 (add-hook 'emacs-startup-hook
-		  (lambda ()
-			(setq gc-cons-threshold 300000000 ; 300mb
-				  gc-cons-percentage 0.1)))
+	  (lambda ()
+	    (setq gc-cons-threshold 300000000 ; 300mb
+		  gc-cons-percentage 0.1)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
