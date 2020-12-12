@@ -41,7 +41,7 @@
 (projectile-mode +1)
 ;; Change the search path of projectile with yours
 (setq projectile-project-search-path '("~/Documents/source_code" "~/Exercism/clojure"))
-(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "M-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 (require 'helm-projectile)
@@ -50,24 +50,6 @@
 (require 'perspective)
 (persp-mode)
 (persp-turn-on-modestring)
-
-;; (require 'lsp-mode)
-;; (setq lsp-keymap-prefix "C-c l")
-;; (setq lsp-enable-file-watchers nil)
-;; (setq read-process-output-max (* 1024 1024))
-;; (setq lsp-completion-provider :capf)
-;; (setq lsp-idle-delay 0.500)
-;; (setq lsp-intelephense-multi-root nil)
-
-;; (with-eval-after-load 'lsp-intelephense
-;;   (setf (lsp--client-multi-root (gethash 'iph lsp-clients)) nil))
-
-;; (define-key lsp-mode-map (kbd "C-c l") lsp-command-map)
-
-;; (with-eval-after-load 'lsp-mode
-;;   (add-hook 'js-mode-hook #'lsp)
-;;   (add-hook 'typescript-mode-hook #'lsp)
-;;   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration))
 
 (move-text-default-bindings)
 
@@ -131,25 +113,8 @@
 (require 'quickrun)
 (global-set-key (kbd "C-c r") 'quickrun)
 
-;; TODO: inspect should use company mode or not
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'after-init-hook 'global-flycheck-mode)
-
-;; (global-set-key (kbd "<f5>") 'dap-debug)
-;; (global-set-key (kbd "M-<f5>") 'dap-hydra)
-;; (add-hook 'dap-mode 'dap-ui-mode)
-;; (add-hook 'dap-session-created (lambda (&_rest) (dap-hydra)))
-;; (add-hook 'dap-terminated (lambda (&_rest) (dap-hydra/nil)))
-
-;; (require 'lsp-ui)
-;; (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
-;; (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
-;; (setq lsp-ui-doc-delay 1.5)
-;; (setq lsp-ui-doc-position 'bottom)
-;; (setq lsp-ui-doc-max-width 100)
-
-;; (require 'helm-lsp)
-;; (define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol)
 
 (require 'editorconfig)
 (editorconfig-mode 1)

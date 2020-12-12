@@ -27,9 +27,7 @@
 (setq create-lockfiles nil)
 
 ;; Show line number
-(if (display-graphic-p)
-    (global-linum-mode)
-  (global-linum-mode -1))
+(global-linum-mode)
 
 (setq-default cursor-type 'bar)
 
