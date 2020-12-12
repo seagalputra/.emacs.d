@@ -8,7 +8,7 @@
 (when (not (display-graphic-p))
   (menu-bar-mode -1))
 
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
+;; (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 (set-language-environment "UTF-8")
 (set-default-coding-systems 'utf-8)
@@ -17,7 +17,7 @@
 
 (show-paren-mode 1)
 
-(add-to-list 'default-frame-alist '(font . "Monaco-13"))
+;; (add-to-list 'default-frame-alist '(font . "Monaco-13"))
 
 ;; (add-hook 'after-save-hook 'format-all-buffer)
 
@@ -27,9 +27,9 @@
 (setq create-lockfiles nil)
 
 ;; Show line number
-(global-linum-mode)
+;; (global-linum-mode)
 
-(setq-default cursor-type 'bar)
+;; (setq-default cursor-type 'bar)
 
 ;; Saving place when previously visited the same file.
 (require 'saveplace)
@@ -39,12 +39,11 @@
 
 ;; Emacs can automatically create backup files. This tells Emacs to
 ;; put all backups in ~/.emacs.d/backups.
-(setq backup-directory-alist `(("." . ,(concat user-emacs-directory
-                                               "backups"))))
+(setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups"))))
 (setq auto-save-default nil)
 
 ;; Setting full path in title bar
-(setq-default frame-title-format "%b (%f)")
+;; (setq-default frame-title-format "%b (%f)")
 
 ;; Keybindings
 ;; Below line is for defining custom key-bindings
@@ -56,25 +55,25 @@
 (global-set-key (kbd "C-c C-;") 'windmove-right)
 
 ;; restart-emacs
-(global-set-key (kbd "C-c C-r") 'restart-emacs)
+;; (global-set-key (kbd "C-c C-r") 'restart-emacs)
 
 ;; Configuring comments when editing file
-(defun toggle-comment-on-line ()
-  "Comment or uncomment current line."
-  (interactive)
-  (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
-(global-set-key (kbd "C-;") 'togglpe-comment-on-line)
+;; (defun toggle-comment-on-line ()
+;;   "Comment or uncomment current line."
+;;   (interactive)
+;;   (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
+;; (global-set-key (kbd "C-;") 'togglpe-comment-on-line)
 
 ;; Key binding to use "hippie expand" for text autocompletion
-(global-set-key (kbd "M-/") 'hippie-expand)
-(setq hippie-expand-try-functions-list
-      '(try-expand-dabbrev
-	try-expand-dabbrev-all-buffers
-	try-expand-dabbrev-from-kill
-	try-complete-lisp-symbol-partially
-	try-complete-lisp-symbol))
+;; (global-set-key (kbd "M-/") 'hippie-expand)
+;; (setq hippie-expand-try-functions-list
+;;       '(try-expand-dabbrev
+;; 	try-expand-dabbrev-all-buffers
+;; 	try-expand-dabbrev-from-kill
+;; 	try-complete-lisp-symbol-partially
+;; 	try-complete-lisp-symbol))
 
-(setq js-indent-level 2)
-(setq typescript-indent-level 2)
+;; (setq js-indent-level 2)
+;; (setq typescript-indent-level 2)
 
 (setq ring-bell-function 'ignore)
