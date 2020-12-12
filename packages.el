@@ -19,12 +19,8 @@
     all-the-icons
     projectile
     org
-    lsp-mode
-    lsp-ui
     flycheck
     company
-    helm-lsp
-    dap-mode
     typescript-mode
     move-text
     monokai-theme
