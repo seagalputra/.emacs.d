@@ -18,7 +18,9 @@
 
 (show-paren-mode 1)
 
-(global-display-line-numbers-mode)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+
+(delete-selection-mode t)
 
 (setq inhibit-startup-screen t)
 

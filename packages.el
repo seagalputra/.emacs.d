@@ -28,15 +28,7 @@
 ;;     helm-projectile
 ;;     web-mode
 ;;     emmet-mode
-;;     perspective
-;;     rainbow-delimiters
 ;;     smartparens
-;;     helm-descbinds
-;;     helm-swoop
-;;     avy
-;;     quickrun
-;;     yasnippet-snippets
-;;     editorconfig
 ;;     clojure-mode
 ;;     cider
 ;;     clojure-snippets
@@ -66,6 +58,14 @@
     org
     editorconfig
     perspective
+    smartparens
+    lsp-mode
+    lsp-ui
+    json-mode
+    dap-mode
+    typescript-mode
+    web-mode
+    emmet-mode
     ) "A list of packages to ensure are installed at launch.")
 
 (defun packages-installed-p ()

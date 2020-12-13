@@ -5,6 +5,7 @@
 (add-to-list 'load-path "~/.emacs.d/config")
 
 (load "development.el")
+(load "web.el")
 (load "keybindings.el")
 
 (add-hook 'after-init-hook '(lambda ()

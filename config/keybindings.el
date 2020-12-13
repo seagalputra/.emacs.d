@@ -9,3 +9,6 @@
 (global-set-key (kbd "C-c C-k") 'windmove-down)
 (global-set-key (kbd "C-c C-i") 'windmove-up)
 (global-set-key (kbd "C-c C-l") 'windmove-right)
+
+(define-key projectile-mode-map (kbd "M-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
