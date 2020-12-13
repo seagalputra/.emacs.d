@@ -1,18 +1,15 @@
-;; Load packages
-;; (load "~/.emacs.d/load-packages.el")
-
 (load "~/.emacs.d/packages.el")
 
-(load-theme 'monokai t)
+(load-theme 'dracula t)
 
 (add-to-list 'load-path "~/.emacs.d/config")
 
+(load "development.el")
 (load "keybindings.el")
 
 (add-hook 'after-init-hook '(lambda ()
 			      (load "~/.emacs.d/config/editor.el")))
 
-;; Avoid garbage collection at statup
 (setq gc-cons-threshold most-positive-fixnum
      gc-cons-percentage 0.6)
 

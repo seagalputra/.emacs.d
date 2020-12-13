@@ -58,6 +58,14 @@
     ido-vertical-mode
     multiple-cursors
     exec-path-from-shell
+    move-text
+    powerline
+    rainbow-delimiters
+    projectile
+    company
+    org
+    editorconfig
+    perspective
     ) "A list of packages to ensure are installed at launch.")
 
 (defun packages-installed-p ()

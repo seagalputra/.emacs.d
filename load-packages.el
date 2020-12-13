@@ -6,52 +6,9 @@
 (when (fboundp 'winner-mode)
   (winner-mode 1))
 
-(require 'magit)
-(define-key global-map (kbd "C-c m") 'magit-status)
-
-(require 'yasnippet)
-(yas-global-mode 1)
-(yas-load-directory "~/.emacs.d/snippets")
-(add-hook 'term-mode-hook (lambda ()
-			    (setq yas-dont-activate t)))
-
-(require 'which-key)
-(which-key-mode)
-
-(require 'helm)
-(helm-mode 1)
-(progn (setq helm-buffers-fuzzy-matching t))
-
-(global-set-key (kbd "C-c h") 'helm-command-prefix)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-x b") 'helm-buffers-list)
-(global-set-key (kbd "C-c b") 'helm-bookmarks)
-(global-set-key (kbd "C-c f") 'helm-recentf)
-(global-set-key (kbd "C-c g") 'helm-grep-do-git-grep)
-
-(require 'multiple-cursors)
-(require 'exec-path-from-shell)
-(when (memq window-system '(mac ns x))
-  (exec-path-from-shell-initialize))
-
-(require 'all-the-icons)
-
-(require 'projectile)
-(projectile-mode +1)
-;; Change the search path of projectile with yours
-(setq projectile-project-search-path '("~/Documents/source_code" "~/Exercism/clojure"))
-(define-key projectile-mode-map (kbd "M-p") 'projectile-command-map)
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-
-(require 'helm-projectile)
-(helm-projectile-on)
-
 (require 'perspective)
 (persp-mode)
 (persp-turn-on-modestring)
-
-(move-text-default-bindings)
 
 (require 'web-mode)
 (defun my-web-mode-hook ()
@@ -91,33 +48,12 @@
 (add-hook 'js-mode-hook #'smartparens-mode)
 (add-hook 'typescript-mode-hook #'smartparens-mode)
 
-(require 'helm-descbinds)
-(helm-descbinds-mode)
-(global-set-key (kbd "C-h b") 'helm-descbinds)
-
-(require 'helm-swoop)
-(global-set-key (kbd "M-i") 'helm-swoop)
-(global-set-key (kbd "M-I") 'helm-swoop-back-to-last-point)
-(define-key isearch-mode-map (kbd "M-m") 'helm-swoop-from-isearch)
-(setq helm-swoop-use-fuzzy-match t)
-(setq helm-multi-swoop-edit-save t)
-(setq helm-swoop-split-with-multiple-windows nil)
-(setq helm-swoop-split-direction 'split-window-vertically)
-(setq helm-swoop-speed-or-color nil)
-(setq helm-swoop-move-to-line-cycle t)
-
 (global-set-key (kbd "C-'") 'avy-goto-char)
 (global-set-key (kbd "M-g w") 'avy-goto-word-1)
 (global-set-key (kbd "M-g f") 'avy-goto-line)
 
-(require 'quickrun)
-(global-set-key (kbd "C-c r") 'quickrun)
-
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'after-init-hook 'global-flycheck-mode)
-
-(require 'editorconfig)
-(editorconfig-mode 1)
 
 ;; Paredit configuration
 (autoload 'enable-paredit-mode "paredit" "Turn on psuedo-structural editing of Lisp code." t)

@@ -10,6 +10,10 @@
 (set-language-environment "UTF-8")
 (set-default-coding-systems 'utf-8)
 
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+(add-to-list 'default-frame-alist '(font . "Monaco-13"))
+
 (global-visual-line-mode 1)
 
 (show-paren-mode 1)
@@ -53,3 +57,17 @@
 (require 'exec-path-from-shell)
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
+
+(move-text-default-bindings)
+
+(require 'powerline)
+(powerline-nano-theme)
+
+(require 'editorconfig)
+(editorconfig-mode 1)
+
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+(require 'perspective)
+(persp-mode)
+(persp-turn-on-modestring)
