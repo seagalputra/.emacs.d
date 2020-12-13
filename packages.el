@@ -8,17 +8,6 @@
 ;; Modify the list if you want to install another package from melpa repository
 ;; (defvar required-packages
 ;;   '(
-;;     magit
-;;     yasnippet
-;;     which-key
-;;     restart-emacs
-;;     helm
-;;     multiple-cursors
-;;     format-all
-;;     exec-path-from-shell
-;;     all-the-icons
-;;     projectile
-;;     org
 ;;     flycheck
 ;;     company
 ;;     typescript-mode
@@ -66,6 +55,7 @@
     typescript-mode
     web-mode
     emmet-mode
+    flycheck
     ) "A list of packages to ensure are installed at launch.")
 
 (defun packages-installed-p ()
