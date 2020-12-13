@@ -3,10 +3,14 @@
 
 (load "~/.emacs.d/packages.el")
 
-(load-theme 'dracula t)
+(load-theme 'monokai t)
+
+(add-to-list 'load-path "~/.emacs.d/config")
+
+(load "keybindings.el")
 
 (add-hook 'after-init-hook '(lambda ()
-			      (load "~/.emacs.d/editor.el")))
+			      (load "~/.emacs.d/config/editor.el")))
 
 ;; Avoid garbage collection at statup
 (setq gc-cons-threshold most-positive-fixnum

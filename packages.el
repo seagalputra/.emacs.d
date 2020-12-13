@@ -54,6 +54,10 @@
     yasnippet-snippets
     which-key
     restart-emacs
+    smex
+    ido-vertical-mode
+    multiple-cursors
+    exec-path-from-shell
     ) "A list of packages to ensure are installed at launch.")
 
 (defun packages-installed-p ()
