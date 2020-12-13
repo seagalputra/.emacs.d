@@ -1,5 +1,4 @@
 (require 'magit)
-(define-key global-map (kbd "C-c m") 'magit-status)
 
 (require 'yasnippet)
 (yas-global-mode 1)
@@ -13,3 +12,7 @@
 
 (add-hook 'after-init-hook 'global-company-mode)
 (add-hook 'after-init-hook 'global-flycheck-mode)
+
+(add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))

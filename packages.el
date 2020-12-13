@@ -56,6 +56,7 @@
     web-mode
     emmet-mode
     flycheck
+    markdown-mode
     ) "A list of packages to ensure are installed at launch.")
 
 (defun packages-installed-p ()

@@ -1,3 +1,6 @@
+(define-key global-map (kbd "C-x g") 'magit-status)
+(define-key global-map (kbd "C-x M-g") 'magit-dispatch-popup)
+
 (global-set-key (kbd "C-c C-r") 'restart-emacs)
 
 (global-set-key (kbd "M-x") 'smex)
