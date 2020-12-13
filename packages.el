@@ -8,16 +8,6 @@
 ;; Modify the list if you want to install another package from melpa repository
 ;; (defvar required-packages
 ;;   '(
-;;     flycheck
-;;     company
-;;     typescript-mode
-;;     move-text
-;;     monokai-theme
-;;     page-break-lines
-;;     helm-projectile
-;;     web-mode
-;;     emmet-mode
-;;     smartparens
 ;;     clojure-mode
 ;;     cider
 ;;     clojure-snippets
@@ -57,6 +47,12 @@
     emmet-mode
     flycheck
     markdown-mode
+    clojure-mode
+    cider
+    clojure-snippets
+    clj-refactor
+    paredit
+    clojure-mode-extra-font-locking
     ) "A list of packages to ensure are installed at launch.")
 
 (defun packages-installed-p ()

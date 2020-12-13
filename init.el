@@ -6,6 +6,7 @@
 
 (load "development.el")
 (load "web.el")
+(load "clojure.el")
 (load "keybindings.el")
 
 (add-hook 'after-init-hook '(lambda ()
