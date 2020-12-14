@@ -4,18 +4,6 @@
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (package-initialize)
 
-;; This variable contains list of packages that installed to this emacs
-;; Modify the list if you want to install another package from melpa repository
-;; (defvar required-packages
-;;   '(
-;;     clojure-mode
-;;     cider
-;;     clojure-snippets
-;;     clj-refactor
-;;     paredit
-;;     clojure-mode-extra-font-locking
-;;     ) "A list of packages to ensure are installed at launch.")
-
 (defvar required-packages
   '(
     monokai-theme
