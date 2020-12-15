@@ -1,9 +1,14 @@
-(add-hook 'js-mode-hook #'lsp-deferred)
-(add-hook 'typescript-mode-hook #'lsp-deferred)
+(add-hook 'js-mode-hook #'lsp)
+(add-hook 'typescript-mode-hook #'lsp)
+
+(setq typescript-indent-level 2)
+(setq js-indent-level 2)
 
 (setq gc-cons-threshold (* 100 1024 1024)
       read-process-output-max (* 1024 1024)
       lsp-completion-provider :capf
+      lsp-ui-doc-enable nil
+      lsp-ui-sideline-show-code-actions nil
       company-idle-delay 0.0
       company-minimum-prefix-length 1)
 
@@ -33,11 +38,11 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.ts\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.ts\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.json\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+;; (add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 
 (require 'emmet-mode)
